@@ -68,10 +68,14 @@ class Module extends \Aurora\System\Module\AbstractModule
                         if ($oHeader) {
                             $sValue = $oHeader->Value();
                             if (0 === strcasecmp(trim($sValue), $headerValue)) {
-                                if (!empty($r['badge'])) {
+                                if (!isset($r['badge'])) {
+                                    $customHeader['badge'] = $this->i18N('EXTERNAL_MESSAGE_BADGE');
+                                } else if (!empty($r['badge'])) {
                                     $customHeader['badge'] = $r['badge'];
                                 }
-                                if (!empty($r['banner'])) {
+                                if (!isset($r['banner'])) {
+                                    $customHeader['banner'] = $this->i18N('EXTERNAL_MESSAGE_BANNER');
+                                } else if (!empty($r['banner'])) {
                                     $customHeader['banner'] = $r['banner'];
                                 }
                                 if (!empty($customHeader)) {
