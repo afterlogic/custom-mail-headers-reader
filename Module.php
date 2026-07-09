@@ -1,9 +1,20 @@
 <?php
+
 namespace Aurora\Modules\CustomMailHeadersReader;
 
+/**
+ * Main Files module. It provides PHP and Web APIs for managing files.
+ *
+ * @license https://www.gnu.org/licenses/agpl-3.0.html AGPL-3.0
+ * @license https://afterlogic.com/products/common-licensing Afterlogic Software License
+ * @copyright Copyright (c) 2026, Afterlogic Corp.
+ *
+ * @property Settings $oModuleSettings
+ *
+ * @package Modules
+ */
 class Module extends \Aurora\System\Module\AbstractModule
 {
-
     /**
      * @return Module
      */
@@ -70,12 +81,12 @@ class Module extends \Aurora\System\Module\AbstractModule
                             if (0 === strcasecmp(trim($sValue), $headerValue)) {
                                 if (!isset($r['badge'])) {
                                     $customHeader['badge'] = $this->i18N('EXTERNAL_MESSAGE_BADGE');
-                                } else if (!empty($r['badge'])) {
+                                } elseif (!empty($r['badge'])) {
                                     $customHeader['badge'] = $r['badge'];
                                 }
                                 if (!isset($r['banner'])) {
                                     $customHeader['banner'] = $this->i18N('EXTERNAL_MESSAGE_BANNER');
-                                } else if (!empty($r['banner'])) {
+                                } elseif (!empty($r['banner'])) {
                                     $customHeader['banner'] = $r['banner'];
                                 }
                                 if (!empty($customHeader)) {
