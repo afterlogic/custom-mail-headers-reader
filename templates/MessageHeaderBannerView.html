@@ -1,7 +1,3 @@
-<div class="custom-external-banner">
-    <!-- ko if: currentMessage() && currentMessage().Custom && currentMessage().Custom.HeaderBanners && currentMessage().Custom.HeaderBanners.length > 0 -->
-    <!-- ko foreach: currentMessage().Custom.HeaderBanners -->
-    <div class="custom-external-banner-inner" data-bind="text: $data"></div>
-    <!-- /ko -->
-    <!-- /ko -->
+<div class="custom-external-banner" data-bind="visible: customHeaderBanner().length > 0">
+    <div class="custom-external-banner-inner" data-bind="text: customHeaderBanner"></div>
 </div>

@@ -12,7 +12,7 @@ module.exports = function (oAppData) {
                 // rely on server to add custom fields to messages (Custom.*)
                 // register controllers to add badge and banner
                 App.subscribeEvent('MailWebclient::RegisterMessagePaneController', function (fRegisterMessagePaneController) {
-                    fRegisterMessagePaneController(require('modules/CustomMailHeadersReader/js/views/MessageHeaderBannerView.js'), 'BeforeMessageHeaders');
+                    fRegisterMessagePaneController(require('modules/%ModuleName%/js/views/MessageHeaderBannerView.js'), 'BeforeMessageHeaders');
                 });
                 App.subscribeEvent('MailWebclient::ConstructView::after', function (oParams) {
                     if (oParams.Name === 'CMessageListView' && oParams.MailCache) {
